@@ -23,30 +23,27 @@
 
 <body>
     <header>
-        <h1 class="text-center bg-danger text-white fw-bold p-3">WELCOME TO BOOK ARCHIVED</h1>
+        <h1 class="text-center bg-primary text-white fw-bold p-3">WELCOME TO BOOK ARCHIVED</h1>
     </header>
 
     <main>
 
         <!-- Search Items -->
-
         <div class="input-group mb-3 mx-auto w-50 mt-5">
             <input type="text" id="search-input" class="form-control" placeholder="Search Your Book"
                 aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button onclick="fetchData()" class="btn btn-outline-secondary btn-danger text-white" type="button"
+            <button onclick="fetchData()" class="btn btn-outline-secondary btn-primary text-white fw-bold" type="button"
                 id="button-addon2">Search</button>
         </div>
 
-        <!-- total Result Showing -->
-
+        <!-- total Search Result Showing -->
         <h3 id="total-search-result" class="d-none mx-auto w-50"> Showing 0 of 0 books</h3>
-        <!-- Showing Results -->
 
+        <!-- Display Book -->
         <div id="show-books-container" class="row row-cols-1 row-cols-md-3 g-4">
         </div>
 
         <!-- No Books Found -->
-
         <section>
             <h2 id='no-book-found'
                 class="text-danger border border-3 rounded border-danger p-3 w-50 mx-auto text-center mt-5 d-none">No
