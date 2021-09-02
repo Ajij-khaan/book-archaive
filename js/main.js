@@ -35,12 +35,9 @@ const showData = (data) => {
     div.innerHTML = `
         <div class="col">
         <div class="card h-100">
-            <img src="${urlCover}"  class="card-img-top img-thumbnail" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.</p>
-            </div>
+        
+        <img src="${urlCover}"  class="card-img-top img-size" alt="...">
+    
             <div class="card-footer">
                 <small class="text-dark fw-bold">${bookTitle}</small>
             </div>
