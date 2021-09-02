@@ -17,6 +17,9 @@ const loadData = (data) => {
     totalResult(data)
     // console.log(data.docs);
 
+    const bookContainer = document.getElementById('show-books-container');
+    bookContainer.innerHTML = '';
+
     //Book Loder Funtion
     data.docs.forEach(element => {
         showData(element);
@@ -36,8 +39,8 @@ const showData = (data) => {
     // console.log(bookTitle, firstPublished);
 
     const bookContainer = document.getElementById('show-books-container');
-    const div = document.createElement('div');
 
+    const div = document.createElement('div');
     div.innerHTML = `
             <div class="col mt-3">
             <div class="card h-100">
@@ -63,13 +66,15 @@ const showData = (data) => {
 
 const totalResult = (data) => {
     const totalSearchResult = document.getElementById('total-search-result');
-    totalSearchResult.classList.remove('d-none');
+    const noBookFound = document.getElementById('no-book-found');
 
     if (data.numFound === 0) {
-        console.log('NO Book Found. Please Search Again.')
+        // console.log('NO Book Found. Please Search Again.')
+        noBookFound.classList.remove('d-none');
     }
 
     else {
+        totalSearchResult.classList.remove('d-none');
         // console.log(data.numFound);
         let count = 0;
         data.docs.forEach(element => {
