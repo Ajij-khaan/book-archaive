@@ -43,10 +43,8 @@ const displayBook = (data) => {
 
     div.innerHTML = `
             <div class="col mt-3">
-            <div class="card h-100 border border-1 border-primary">
-            
+            <div class="card h-100">
             <img src="${urlCover}"  class="card-img-top img-size" alt="...">
-        
                 <div class="card-footer">
                     <small class="text-dark fw-bold">${bookTitle}</small>
                 </div>
