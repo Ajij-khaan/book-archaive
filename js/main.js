@@ -37,7 +37,7 @@ const displayBook = (data) => {
     const defaultCover = `images/not-available.jpg`;
     const bookTitle = data.title;
     const author = data.author_name;
-    const publisher = data.publisher_facet;
+    const publisher = data.publisher;
     const firstPublished = data.first_publish_year;
 
     const bookContainer = document.getElementById('show-books-container');
