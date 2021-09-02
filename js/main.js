@@ -34,31 +34,46 @@ const loadData = (data) => {
 const displayBook = (data) => {
 
     const urlCover = `https://covers.openlibrary.org/b/id/${data.cover_i}-M.jpg`;
+    const defaultCover = `images/not-available.jpg`;
     const bookTitle = data.title;
     const author = data.author_name;
+    const publisher = data.publisher_facet;
     const firstPublished = data.first_publish_year;
 
     const bookContainer = document.getElementById('show-books-container');
     const div = document.createElement('div');
 
-    div.innerHTML = `
-            <div class="col mt-3">
-            <div class="card h-100">
-            <img src="${urlCover}"  class="card-img-top img-size" alt="...">
-                <div class="card-footer">
-                    <small class="text-dark fw-bold">${bookTitle}</small>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">Author: ${author}</small>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">First published in ${firstPublished}</small>
-                </div>
-            </div>
-            </div>
-        `;
+    if (data.cover_i) {
+        addSingleBooks(urlCover, bookTitle, author, publisher, firstPublished, div)
+    }
+    else {
+        addSingleBooks(defaultCover, bookTitle, author, publisher, firstPublished, div)
+
+    }
 
     bookContainer.appendChild(div);
+}
+
+const addSingleBooks = (urlCover, bookTitle, author, publisher, firstPublished, div) => {
+    div.innerHTML = `
+    <div class="col mt-3">
+    <div class="card h-100">
+    <img src="${urlCover}"  class="card-img-top img-size" alt="...">
+        <div class="card-footer">
+            <small class="text-dark fw-bold">${bookTitle}</small>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted"><span class="fw-bold">Author:</span> ${author}</small>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted"><span class="fw-bold">Publisher:</span> ${publisher}</small>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">First published in ${firstPublished}</small>
+        </div>
+    </div>
+    </div>
+`;
 }
 
 //Checking how much resutl showing
